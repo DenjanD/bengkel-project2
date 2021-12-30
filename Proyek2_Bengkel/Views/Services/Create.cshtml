@@ -1,0 +1,61 @@
+﻿@model Proyek2_Bengkel.Models.Service
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Service</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceCategoryId" class="control-label"></label>
+                <select asp-for="ServiceCategoryId" class ="form-control" asp-items="ViewBag.ServiceCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Complaint" class="control-label"></label>
+                <input asp-for="Complaint" class="form-control" />
+                <span asp-validation-for="Complaint" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleName" class="control-label"></label>
+                <input asp-for="VehicleName" class="form-control" />
+                <span asp-validation-for="VehicleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehiclePlate" class="control-label"></label>
+                <input asp-for="VehiclePlate" class="form-control" />
+                <span asp-validation-for="VehiclePlate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceDate" class="control-label"></label>
+                <input asp-for="ServiceDate" class="form-control" />
+                <span asp-validation-for="ServiceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceCost" class="control-label"></label>
+                <input asp-for="ServiceCost" class="form-control" />
+                <span asp-validation-for="ServiceCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

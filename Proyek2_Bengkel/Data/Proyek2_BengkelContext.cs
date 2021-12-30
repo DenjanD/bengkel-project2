@@ -28,5 +28,11 @@ namespace Proyek2_Bengkel.Data
         public DbSet<Proyek2_Bengkel.Models.Sale> Sale { get; set; }
 
         public DbSet<Proyek2_Bengkel.Models.SaleDetail> SaleDetail { get; set; }
+
+        public DbSet<Proyek2_Bengkel.Models.ServiceCategory> ServiceCategory { get; set; }
+
+        public DbSet<Proyek2_Bengkel.Models.Service> Service { get; set; }
+
+        public DbSet<Proyek2_Bengkel.Models.ServiceDetail> ServiceDetail { get; set; }
     }
 }

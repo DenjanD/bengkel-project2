@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyek2_Bengkel.Data;
 
@@ -11,9 +12,10 @@ using Proyek2_Bengkel.Data;
 namespace Proyek2_Bengkel.Migrations
 {
     [DbContext(typeof(Proyek2_BengkelContext))]
-    partial class Proyek2_BengkelContextModelSnapshot : ModelSnapshot
+    [Migration("20211230153222_CreateServiceDetailMigration")]
+    partial class CreateServiceDetailMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -178,10 +180,13 @@ namespace Proyek2_Bengkel.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("PartId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ServiceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SparePartId")
+                    b.Property<int?>("SparePartId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -322,9 +327,7 @@ namespace Proyek2_Bengkel.Migrations
 
                     b.HasOne("Proyek2_Bengkel.Models.SparePart", "SparePart")
                         .WithMany()
-                        .HasForeignKey("SparePartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SparePartId");
 
                     b.Navigation("Service");
 

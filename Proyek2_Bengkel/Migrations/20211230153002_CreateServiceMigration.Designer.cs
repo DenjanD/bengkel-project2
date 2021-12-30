@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyek2_Bengkel.Data;
 
@@ -11,9 +12,10 @@ using Proyek2_Bengkel.Data;
 namespace Proyek2_Bengkel.Migrations
 {
     [DbContext(typeof(Proyek2_BengkelContext))]
-    partial class Proyek2_BengkelContextModelSnapshot : ModelSnapshot
+    [Migration("20211230153002_CreateServiceMigration")]
+    partial class CreateServiceMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,29 +172,6 @@ namespace Proyek2_Bengkel.Migrations
                     b.ToTable("ServiceCategory");
                 });
 
-            modelBuilder.Entity("Proyek2_Bengkel.Models.ServiceDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ServiceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SparePartId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ServiceId");
-
-                    b.HasIndex("SparePartId");
-
-                    b.ToTable("ServiceDetail");
-                });
-
             modelBuilder.Entity("Proyek2_Bengkel.Models.SparePart", b =>
                 {
                     b.Property<int>("Id")
@@ -310,25 +289,6 @@ namespace Proyek2_Bengkel.Migrations
                     b.Navigation("Customer");
 
                     b.Navigation("ServiceCategory");
-                });
-
-            modelBuilder.Entity("Proyek2_Bengkel.Models.ServiceDetail", b =>
-                {
-                    b.HasOne("Proyek2_Bengkel.Models.Service", "Service")
-                        .WithMany()
-                        .HasForeignKey("ServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Proyek2_Bengkel.Models.SparePart", "SparePart")
-                        .WithMany()
-                        .HasForeignKey("SparePartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Service");
-
-                    b.Navigation("SparePart");
                 });
 
             modelBuilder.Entity("Proyek2_Bengkel.Models.SparePart", b =>

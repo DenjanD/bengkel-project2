@@ -11,23 +11,23 @@ using Proyek2_Bengkel.Models;
 
 namespace Proyek2_Bengkel.Controllers
 {
-    public class SalesController : Controller
+    public class ServiceDetailsController : Controller
     {
         private readonly Proyek2_BengkelContext _context;
 
-        public SalesController(Proyek2_BengkelContext context)
+        public ServiceDetailsController(Proyek2_BengkelContext context)
         {
             _context = context;
         }
 
-        // GET: Sales
+        // GET: ServiceDetails
         public async Task<IActionResult> Index()
         {
-            var proyek2_BengkelContext = _context.Sale.Include(s => s.Teller);
+            var proyek2_BengkelContext = _context.ServiceDetail.Include(s => s.Service).Include(s => s.SparePart);
             return View(await proyek2_BengkelContext.ToListAsync());
         }
 
-        // GET: Sales/Details/5
+        // GET: ServiceDetails/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,42 +35,44 @@ namespace Proyek2_Bengkel.Controllers
                 return NotFound();
             }
 
-            var sale = await _context.Sale
-                .Include(s => s.Teller)
+            var serviceDetail = await _context.ServiceDetail
+                .Include(s => s.Service)
+                .Include(s => s.SparePart)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (sale == null)
+            if (serviceDetail == null)
             {
                 return NotFound();
             }
 
-            return View(sale);
+            return View(serviceDetail);
         }
 
-        // GET: Sales/Create
+        // GET: ServiceDetails/Create
         public IActionResult Create()
         {
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id");
+            ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id");
+            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id");
             return View();
         }
 
-        // POST: Sales/Create
+        // POST: ServiceDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TellerId,Description,TotalCost,SaleDate")] Sale sale)
+        public async Task<IActionResult> Create([Bind("Id,ServiceId,SparePartId,PartId")] ServiceDetail serviceDetail)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(sale);
+                _context.Add(serviceDetail);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id", sale.TellerId);
-            return View(sale);
+            ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id", serviceDetail.ServiceId);
+            return View(serviceDetail);
         }
 
-        // GET: Sales/Edit/5
+        // GET: ServiceDetails/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -78,23 +80,24 @@ namespace Proyek2_Bengkel.Controllers
                 return NotFound();
             }
 
-            var sale = await _context.Sale.FindAsync(id);
-            if (sale == null)
+            var serviceDetail = await _context.ServiceDetail.FindAsync(id);
+            if (serviceDetail == null)
             {
                 return NotFound();
             }
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id", sale.TellerId);
-            return View(sale);
+            ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id", serviceDetail.ServiceId);
+            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id", serviceDetail.SparePartId);
+            return View(serviceDetail);
         }
 
-        // POST: Sales/Edit/5
+        // POST: ServiceDetails/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TellerId,Description,TotalCost,SaleDate")] Sale sale)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ServiceId,SparePartId,PartId")] ServiceDetail serviceDetail)
         {
-            if (id != sale.Id)
+            if (id != serviceDetail.Id)
             {
                 return NotFound();
             }
@@ -103,12 +106,12 @@ namespace Proyek2_Bengkel.Controllers
             {
                 try
                 {
-                    _context.Update(sale);
+                    _context.Update(serviceDetail);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SaleExists(sale.Id))
+                    if (!ServiceDetailExists(serviceDetail.Id))
                     {
                         return NotFound();
                     }
@@ -119,11 +122,11 @@ namespace Proyek2_Bengkel.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id", sale.TellerId);
-            return View(sale);
+            ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id", serviceDetail.ServiceId);
+            return View(serviceDetail);
         }
 
-        // GET: Sales/Delete/5
+        // GET: ServiceDetails/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -131,31 +134,32 @@ namespace Proyek2_Bengkel.Controllers
                 return NotFound();
             }
 
-            var sale = await _context.Sale
-                .Include(s => s.Teller)
+            var serviceDetail = await _context.ServiceDetail
+                .Include(s => s.Service)
+                .Include(s => s.SparePart)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (sale == null)
+            if (serviceDetail == null)
             {
                 return NotFound();
             }
 
-            return View(sale);
+            return View(serviceDetail);
         }
 
-        // POST: Sales/Delete/5
+        // POST: ServiceDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var sale = await _context.Sale.FindAsync(id);
-            _context.Sale.Remove(sale);
+            var serviceDetail = await _context.ServiceDetail.FindAsync(id);
+            _context.ServiceDetail.Remove(serviceDetail);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SaleExists(int id)
+        private bool ServiceDetailExists(int id)
         {
-            return _context.Sale.Any(e => e.Id == id);
+            return _context.ServiceDetail.Any(e => e.Id == id);
         }
     }
 }
