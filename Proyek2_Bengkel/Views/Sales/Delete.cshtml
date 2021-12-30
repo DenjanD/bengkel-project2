@@ -1,0 +1,51 @@
+﻿@model Proyek2_Bengkel.Models.Sale
+
+@{
+    ViewData["Title"] = "Hapus Penjualan";
+}
+
+<h1>Hapus Data</h1>
+
+<h3>Anda yakin ingin menghapus data ini?</h3>
+<div>
+    <h4>Penjualan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Teller)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Teller.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Customer.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalCost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SaleDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SaleDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Hapus Data" class="btn btn-danger" /> |
+        <a asp-action="Index">Kembali ke Tabel</a>
+    </form>
+</div>

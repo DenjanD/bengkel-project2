@@ -1,0 +1,41 @@
+﻿@model Proyek2_Bengkel.Models.SaleDetail
+
+@{
+    ViewData["Title"] = "Tambah Rincian Penjualan";
+}
+
+<h1>Tambah Data</h1>
+
+<h4>Rincian Penjualan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SaleId" class="control-label"></label>
+                <select asp-for="SaleId" class ="form-control" asp-items="ViewBag.SaleId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SparePartId" class="control-label"></label>
+                <select asp-for="SparePartId" class ="form-control" asp-items="ViewBag.SparePartId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Tambah Data" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">kembali ke Tabel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

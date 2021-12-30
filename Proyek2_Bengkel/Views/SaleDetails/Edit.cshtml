@@ -1,0 +1,44 @@
+﻿@model Proyek2_Bengkel.Models.SaleDetail
+
+@{
+    ViewData["Title"] = "Ubah Rincian Penjualan";
+}
+
+<h1>Ubah Data</h1>
+
+<h4>Rincian Penjualan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SaleId" class="control-label"></label>
+                <select asp-for="SaleId" class="form-control" asp-items="ViewBag.SaleId"></select>
+                <span asp-validation-for="SaleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SparePartId" class="control-label"></label>
+                <select asp-for="SparePartId" class="form-control" asp-items="ViewBag.SparePartId"></select>
+                <span asp-validation-for="SparePartId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Kembali ke Tabel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

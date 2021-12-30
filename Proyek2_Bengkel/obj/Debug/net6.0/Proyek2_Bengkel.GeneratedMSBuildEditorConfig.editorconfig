@@ -1,0 +1,188 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Proyek2_Bengkel
+build_property.RootNamespace = Proyek2_Bengkel
+build_property.ProjectDir = C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Customers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/PartCategories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydENhdGVnb3JpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/PartCategories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydENhdGVnb3JpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/PartCategories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydENhdGVnb3JpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/PartCategories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydENhdGVnb3JpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/PartCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydENhdGVnb3JpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SaleDetails/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZURldGFpbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SaleDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZURldGFpbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SaleDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZURldGFpbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SaleDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZURldGFpbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SaleDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZURldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Sales/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Sales/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Sales/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Sales/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Sales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SpareParts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhcmVQYXJ0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SpareParts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhcmVQYXJ0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SpareParts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhcmVQYXJ0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SpareParts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhcmVQYXJ0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/SpareParts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhcmVQYXJ0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Suppliers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Suppliers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Suppliers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Suppliers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Suppliers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Tellers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsbGVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Tellers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsbGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Tellers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsbGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Tellers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsbGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Tellers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVsbGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Shared/_Layout - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQgLSBDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-8bljjrpmif
+
+[C:/Users/DenjanD/source/repos/Proyek2_Bengkel/Proyek2_Bengkel/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9p75yhwyjb
