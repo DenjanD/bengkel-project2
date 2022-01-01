@@ -60,15 +60,26 @@ namespace Proyek2_Bengkel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ServiceId,SparePartId,PartId")] ServiceDetail serviceDetail)
+        public async Task<IActionResult> Create([Bind("Id,ServiceId,SparePartId")] ServiceDetail serviceDetail)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(serviceDetail);
                 await _context.SaveChangesAsync();
+
+                var getSparePart = await _context.SparePart.FirstOrDefaultAsync(c => c.Id == serviceDetail.SparePartId);
+                int totalCost = getSparePart.Price;
+
+                var getServiceUpdate = await _context.Service.FirstOrDefaultAsync(d => d.Id == serviceDetail.ServiceId);
+                getServiceUpdate.ServiceCost += totalCost;
+
+                _context.Entry(getServiceUpdate).CurrentValues.SetValues(getServiceUpdate);
+                _context.SaveChanges();
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id", serviceDetail.ServiceId);
+            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id", serviceDetail.SparePartId);
             return View(serviceDetail);
         }
 
@@ -95,7 +106,7 @@ namespace Proyek2_Bengkel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ServiceId,SparePartId,PartId")] ServiceDetail serviceDetail)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ServiceId,SparePartId")] ServiceDetail serviceDetail)
         {
             if (id != serviceDetail.Id)
             {
@@ -108,6 +119,15 @@ namespace Proyek2_Bengkel.Controllers
                 {
                     _context.Update(serviceDetail);
                     await _context.SaveChangesAsync();
+
+                    var getSparePart = await _context.SparePart.FirstOrDefaultAsync(c => c.Id == serviceDetail.SparePartId);
+                    int newPrice = getSparePart.Price;
+
+                    var getServiceUpdate = await _context.Service.FirstOrDefaultAsync(d => d.Id == serviceDetail.ServiceId);
+                    getServiceUpdate.ServiceCost += newPrice;
+
+                    _context.Entry(getServiceUpdate).CurrentValues.SetValues(getServiceUpdate);
+                    _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -123,6 +143,7 @@ namespace Proyek2_Bengkel.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id", serviceDetail.ServiceId);
+            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id", serviceDetail.SparePartId);
             return View(serviceDetail);
         }
 
@@ -154,6 +175,16 @@ namespace Proyek2_Bengkel.Controllers
             var serviceDetail = await _context.ServiceDetail.FindAsync(id);
             _context.ServiceDetail.Remove(serviceDetail);
             await _context.SaveChangesAsync();
+
+            var getSparePart = await _context.SparePart.FirstOrDefaultAsync(c => c.Id == serviceDetail.SparePartId);
+            int totalCost = getSparePart.Price;
+
+            var getServiceUpdate = await _context.Service.FirstOrDefaultAsync(d => d.Id == serviceDetail.ServiceId);
+            getServiceUpdate.ServiceCost -= totalCost;
+
+            _context.Entry(getServiceUpdate).CurrentValues.SetValues(getServiceUpdate);
+            _context.SaveChanges();
+
             return RedirectToAction(nameof(Index));
         }
 

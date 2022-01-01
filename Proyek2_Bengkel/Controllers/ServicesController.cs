@@ -66,6 +66,16 @@ namespace Proyek2_Bengkel.Controllers
             {
                 _context.Add(service);
                 await _context.SaveChangesAsync();
+
+                var getServiceCategory = await _context.ServiceCategory.FirstOrDefaultAsync(c => c.Id == service.ServiceCategoryId);
+                int totalCost = getServiceCategory.Cost;
+
+                var getServiceUpdate = await _context.Service.FirstOrDefaultAsync(d => d.Id == service.Id);
+                getServiceUpdate.ServiceCost += totalCost;
+
+                _context.Entry(getServiceUpdate).CurrentValues.SetValues(getServiceUpdate);
+                _context.SaveChanges();
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", service.CustomerId);
@@ -109,6 +119,15 @@ namespace Proyek2_Bengkel.Controllers
                 {
                     _context.Update(service);
                     await _context.SaveChangesAsync();
+
+                    var getServiceCategory = await _context.ServiceCategory.FirstOrDefaultAsync(c => c.Id == service.ServiceCategoryId);
+                    int newCost = getServiceCategory.Cost;
+
+                    var getServiceUpdate = await _context.Service.FirstOrDefaultAsync(d => d.Id == service.Id);
+                    getServiceUpdate.ServiceCost += newCost;
+
+                    _context.Entry(getServiceUpdate).CurrentValues.SetValues(getServiceUpdate);
+                    _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -156,6 +175,7 @@ namespace Proyek2_Bengkel.Controllers
             var service = await _context.Service.FindAsync(id);
             _context.Service.Remove(service);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 

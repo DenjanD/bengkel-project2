@@ -68,8 +68,8 @@ namespace Proyek2_Bengkel.Controllers
                 _context.Add(saleDetail);
                 await _context.SaveChangesAsync();
 
-                var getSale = await _context.SparePart.FirstOrDefaultAsync(c => c.Id == saleDetail.SparePartId);
-                int totalCost = getSale.Price * saleDetail.Qty;
+                var getSparePart = await _context.SparePart.FirstOrDefaultAsync(c => c.Id == saleDetail.SparePartId);
+                int totalCost = getSparePart.Price * saleDetail.Qty;
 
                 var getSaleUpdate = await _context.Sale.FirstOrDefaultAsync(d => d.Id == saleDetail.SaleId);
                 getSaleUpdate.TotalCost = totalCost;
