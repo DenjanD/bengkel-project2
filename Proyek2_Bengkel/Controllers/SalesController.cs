@@ -49,7 +49,7 @@ namespace Proyek2_Bengkel.Controllers
         // GET: Sales/Create
         public IActionResult Create()
         {
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id");
+            ViewData["TellerName"] = new SelectList(_context.Teller, "Id", "Name");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace Proyek2_Bengkel.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id", sale.TellerId);
+            ViewData["TellerName"] = new SelectList(_context.Teller, "Id", "Name", sale.TellerId);
             return View(sale);
         }
 
@@ -83,7 +83,7 @@ namespace Proyek2_Bengkel.Controllers
             {
                 return NotFound();
             }
-            ViewData["TellerId"] = new SelectList(_context.Teller, "Id", "Id", sale.TellerId);
+            ViewData["TellerName"] = new SelectList(_context.Teller, "Id", "Name", sale.TellerId);
             return View(sale);
         }
 

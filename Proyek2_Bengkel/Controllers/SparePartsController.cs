@@ -50,8 +50,8 @@ namespace Proyek2_Bengkel.Controllers
         // GET: SpareParts/Create
         public IActionResult Create()
         {
-            ViewData["PartCategoryId"] = new SelectList(_context.PartCategory, "Id", "Id");
-            ViewData["SupplierId"] = new SelectList(_context.Supplier, "Id", "Id");
+            ViewData["PartCategoryName"] = new SelectList(_context.PartCategory, "Id", "Name");
+            ViewData["SupplierName"] = new SelectList(_context.Supplier, "Id", "Name");
             return View();
         }
 
@@ -86,8 +86,8 @@ namespace Proyek2_Bengkel.Controllers
             {
                 return NotFound();
             }
-            ViewData["PartCategoryId"] = new SelectList(_context.PartCategory, "Id", "Id", sparePart.PartCategoryId);
-            ViewData["SupplierId"] = new SelectList(_context.Supplier, "Id", "Id", sparePart.SupplierId);
+            ViewData["PartCategoryName"] = new SelectList(_context.PartCategory, "Id", "Name", sparePart.PartCategoryId);
+            ViewData["SupplierName"] = new SelectList(_context.Supplier, "Id", "Name", sparePart.SupplierId);
             return View(sparePart);
         }
 

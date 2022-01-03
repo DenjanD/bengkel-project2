@@ -51,7 +51,7 @@ namespace Proyek2_Bengkel.Controllers
         public IActionResult Create()
         {
             ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id");
-            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id");
+            ViewData["SparePartName"] = new SelectList(_context.SparePart, "Id", "Name");
             return View();
         }
 
@@ -97,7 +97,7 @@ namespace Proyek2_Bengkel.Controllers
                 return NotFound();
             }
             ViewData["ServiceId"] = new SelectList(_context.Service, "Id", "Id", serviceDetail.ServiceId);
-            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id", serviceDetail.SparePartId);
+            ViewData["SparePartName"] = new SelectList(_context.SparePart, "Id", "Name", serviceDetail.SparePartId);
             return View(serviceDetail);
         }
 

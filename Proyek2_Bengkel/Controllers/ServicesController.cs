@@ -50,8 +50,8 @@ namespace Proyek2_Bengkel.Controllers
         // GET: Services/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id");
-            ViewData["ServiceCategoryId"] = new SelectList(_context.ServiceCategory, "Id", "Id");
+            ViewData["CustomerName"] = new SelectList(_context.Customer, "Id", "Name");
+            ViewData["ServiceCategoryName"] = new SelectList(_context.ServiceCategory, "Id", "Name");
             return View();
         }
 
@@ -96,8 +96,8 @@ namespace Proyek2_Bengkel.Controllers
             {
                 return NotFound();
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customer, "Id", "Id", service.CustomerId);
-            ViewData["ServiceCategoryId"] = new SelectList(_context.ServiceCategory, "Id", "Id", service.ServiceCategoryId);
+            ViewData["CustomerName"] = new SelectList(_context.Customer, "Id", "Name", service.CustomerId);
+            ViewData["ServiceCategoryName"] = new SelectList(_context.ServiceCategory, "Id", "Name", service.ServiceCategoryId);
             return View(service);
         }
 

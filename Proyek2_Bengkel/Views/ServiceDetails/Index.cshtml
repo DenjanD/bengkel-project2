@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Proyek2_Bengkel.Models.ServiceDetail>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Data Rincian Servis";
 }
 
-<h1>Index</h1>
+<h1>Rincian Servis</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Tambah Data</a>
 </p>
 <table class="table">
     <thead>
@@ -28,11 +28,11 @@
                 @Html.DisplayFor(modelItem => item.Service.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SparePartId)
+                @Html.DisplayFor(modelItem => item.SparePart.Name)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Rincian</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Hapus</a>
             </td>
         </tr>
 }

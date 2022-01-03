@@ -31,13 +31,12 @@
                 @Html.DisplayFor(modelItem => item.Sale.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SparePart.Id)
+                @Html.DisplayFor(modelItem => item.SparePart.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Qty)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Ubah</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Rincian</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Hapus</a>
             </td>

@@ -52,7 +52,7 @@ namespace Proyek2_Bengkel.Controllers
         public IActionResult Create()
         {
             ViewData["SaleId"] = new SelectList(_context.Sale, "Id", "Id");
-            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id");
+            ViewData["SparePartName"] = new SelectList(_context.SparePart, "Id", "Name");
             return View();
         }
 
@@ -72,7 +72,7 @@ namespace Proyek2_Bengkel.Controllers
                 int totalCost = getSparePart.Price * saleDetail.Qty;
 
                 var getSaleUpdate = await _context.Sale.FirstOrDefaultAsync(d => d.Id == saleDetail.SaleId);
-                getSaleUpdate.TotalCost = totalCost;
+                getSaleUpdate.TotalCost += totalCost;
 
                 _context.Entry(getSaleUpdate).CurrentValues.SetValues(getSaleUpdate);
                 _context.SaveChanges();
@@ -145,7 +145,7 @@ namespace Proyek2_Bengkel.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["SaleId"] = new SelectList(_context.Sale, "Id", "Id", saleDetail.SaleId);
-            ViewData["SparePartId"] = new SelectList(_context.SparePart, "Id", "Id", saleDetail.SparePartId);
+            ViewData["SparePartName"] = new SelectList(_context.SparePart, "Id", "Name", saleDetail.SparePartId);
             return View(saleDetail);
         }
 

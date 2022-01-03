@@ -20,7 +20,7 @@
             @Html.DisplayNameFor(model => model.SparePart)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SparePart.Id)
+            @Html.DisplayFor(model => model.SparePart.Name)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Qty)
@@ -31,6 +31,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Ubah Data</a> |
     <a asp-action="Index">Kembali ke Tabel</a>
 </div>
