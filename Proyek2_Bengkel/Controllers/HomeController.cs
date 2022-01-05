@@ -18,9 +18,9 @@ namespace Proyek2_Bengkel.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Logout()
         {
-            return View();
+            return RedirectToAction("Index", "Login");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

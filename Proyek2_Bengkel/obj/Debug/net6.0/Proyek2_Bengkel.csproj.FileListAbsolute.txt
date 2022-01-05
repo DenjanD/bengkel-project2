@@ -259,5 +259,4 @@ C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\obj\Debug\net6.0\P
 C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\obj\Debug\net6.0\ref\Proyek2_Bengkel.dll
 C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\obj\Debug\net6.0\Proyek2_Bengkel.pdb
 C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\obj\Debug\net6.0\Proyek2_Bengkel.genruntimeconfig.cache
-C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout - Copy.cshtml.rz.scp.css
 C:\Users\DenjanD\source\repos\Proyek2_Bengkel\Proyek2_Bengkel\obj\Debug\net6.0\Proyek2_Bengkel.csproj.AssemblyReference.cache
