@@ -15,11 +15,16 @@ namespace Proyek2_Bengkel.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.Session.GetString("TellerRole") != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Login");
         }
 
         public IActionResult Logout()
         {
+            HttpContext.Session.Remove("TellerRole");
             return RedirectToAction("Index", "Login");
         }
 

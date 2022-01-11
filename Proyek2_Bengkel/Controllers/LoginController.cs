@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Proyek2_Bengkel.Data;
 using Proyek2_Bengkel.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 
 namespace Proyek2_Bengkel.Controllers
 {
@@ -38,6 +40,7 @@ namespace Proyek2_Bengkel.Controllers
 
             if (up.Count() == 1)
             {
+                HttpContext.Session.SetString("TellerRole", getTeller.Role);
                 return RedirectToAction("Index", "Home");
             }
             else

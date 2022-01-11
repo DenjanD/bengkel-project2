@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -28,9 +31,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="~/Home/Logout">Logout</a></li>
                     </ul>
                 </li>
@@ -54,7 +54,9 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="~/Tellers">Data Kasir</a>
+                                    @if (@HttpContextAccessor.HttpContext.Session.GetString("TellerRole") == "ADMIN"){
+                                        <a class="nav-link" href="~/Tellers">Data Kasir</a>
+                                    }
                                     <a class="nav-link" href="~/Customers">Data Pelanggan</a>
                                 </nav>
                             </div>
@@ -65,17 +67,25 @@
                             </a>
                             <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                @if (@HttpContextAccessor.HttpContext.Session.GetString("TellerRole") == "ADMIN")
+                                {
                                     <a class="nav-link" href="~/Suppliers">Data Supplier</a>
+                                }
+                                @if (@HttpContextAccessor.HttpContext.Session.GetString("TellerRole") == "ADMIN")
+                                {
                                     <a class="nav-link" href="~/PartCategories">Data Kategori Barang</a>
-                                    <a class="nav-link" href="~/SpareParts">Data Barang</a>
+                                }
+                                <a class="nav-link" href="~/SpareParts">Data Barang</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="~/ServiceCategories">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Data Kategori Servis
-                            </a>
-
-                            <div class="sb-sidenav-menu-heading">Data Transaksi</div>
+                            @if (@HttpContextAccessor.HttpContext.Session.GetString("TellerRole") == "ADMIN")
+                            {
+                                <a class="nav-link" href="~/ServiceCategories">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Data Kategori Servis
+                                </a>
+                            }
+                        <div class="sb-sidenav-menu-heading">Data Transaksi</div>
                             <a class="nav-link" href="~/Services">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Servis
@@ -105,12 +115,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Copyright &copy; Aplikasi Bengkel 2022</div>
                         </div>
                     </div>
                 </footer>

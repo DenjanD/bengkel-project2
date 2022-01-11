@@ -8,22 +8,40 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Proyek2_Bengkel.Data;
 using Proyek2_Bengkel.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 
 namespace Proyek2_Bengkel.Controllers
 {
     public class TellersController : Controller
     {
         private readonly Proyek2_BengkelContext _context;
+        public string? TellerRole;
 
         public TellersController(Proyek2_BengkelContext context)
         {
             _context = context;
         }
 
+        public string GetRole()
+        {
+            string TellerRole = HttpContext.Session.GetString("TellerRole");
+            Console.Write(TellerRole);
+            return TellerRole;
+        }
+
         // GET: Tellers
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Teller.ToListAsync());
+            string role = GetRole();
+            
+            if (role == "ADMIN")
+            {
+                return View(await _context.Teller.ToListAsync());
+            } else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         // GET: Tellers/Details/5
@@ -55,7 +73,7 @@ namespace Proyek2_Bengkel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Username,Password")] Teller teller)
+        public async Task<IActionResult> Create([Bind("Id,Name,Username,Password,Role")] Teller teller)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +105,7 @@ namespace Proyek2_Bengkel.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Username,Password")] Teller teller)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Username,Password,Role")] Teller teller)
         {
             if (id != teller.Id)
             {
